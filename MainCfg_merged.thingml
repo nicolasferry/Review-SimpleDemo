@@ -133,7 +133,7 @@ thing GatewayCommandParser includes SerialMsgs , GatewayCommandMsgs {
 		state Ready {
 			internal
 			event m : blerx?receive_byte
-			guard m.b == `\'!\'`
+			guard m.b == `'!'`
 			action gateway!clear_screen()
 			internal
 			event m : blerx?receive_byte
@@ -142,7 +142,7 @@ thing GatewayCommandParser includes SerialMsgs , GatewayCommandMsgs {
 		}
 		internal
 		event gateway?button_pushed
-		action bletx!write_byte(`\'?\'`)
+		action bletx!write_byte(`'?'`)
 	}
 }
 thing DisplayArduino includes Display @c_header "
@@ -168,7 +168,7 @@ thing DisplayArduino includes Display @c_header "
 	`tft.fillScreen(ST7735_BLACK);`
 	end
 	function setColor(r : UInt8, g : UInt8, b : UInt8) do
-		color = `tft.Color565(` & r & `, ` & g & `, ` & b & `)`
+		color = `tft.color565(` & r & `, ` & g & `, ` & b & `)`
 	end
 	function drawRect(x : UInt8, y : UInt8, width : UInt8, height : UInt8) do
 		`tft.drawRect(` & x & `,` & y & `,` & width & `,` & height & `,` & color & `);`
