@@ -14,8 +14,7 @@ thing Main includes GatewayCommandMsgs , DisplayMsgs , TimerMsgs {
 	property fgcolor : UInt8 [ 3 ]
 	property value : Int16 = 64
 	function initColors() do
-		//bgcolor[0] = 53
-		bgcolor[0] = 222
+		bgcolor[0] = 53
 		bgcolor[1] = 40
 		bgcolor[2] = 120
 		fgcolor[0] = 107
@@ -75,7 +74,8 @@ thing Main includes GatewayCommandMsgs , DisplayMsgs , TimerMsgs {
 		action do
 			var a : Int16 = `analogRead(3)`
 			if (a > 205 and a < 300) do
-				display!setColor(255, 50, 0)
+				//display!setColor(255, 50, 0)
+				display!setColor(2, 50, 250)
 				display!drawRect(0, 0, XDISPSIZE - 1, YDISPSIZE - 1)
 				display!drawRect(1, 1, XDISPSIZE - 3, YDISPSIZE - 3)
 				clock!timer_start(1, 500)
