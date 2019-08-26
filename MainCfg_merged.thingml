@@ -156,7 +156,8 @@ thing DisplayArduino includes Display @c_header "
 #define TFT_DC     8" @c_global "Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS,  TFT_DC, TFT_RST);" {
 	property XFRAMESIZE : UInt16
 	property YFRAMESIZE : UInt16
-	property color : UInt16 = `ST7735_BLACK`
+	//property color : UInt16 = `ST7735_BLACK`
+	property color : UInt16 = `ST7735_WHITE`
 	function initDisplay(xsize : UInt8, ysize : UInt8) do
 	`tft.initR(INITR_BLACKTAB);
 		tft.fillScreen(ST7735_BLACK);
