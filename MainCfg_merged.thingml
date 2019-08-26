@@ -14,7 +14,8 @@ thing Main includes GatewayCommandMsgs , DisplayMsgs , TimerMsgs {
 	property fgcolor : UInt8 [ 3 ]
 	property value : Int16 = 64
 	function initColors() do
-		bgcolor[0] = 53
+		//bgcolor[0] = 53
+		bgcolor[0] = 222
 		bgcolor[1] = 40
 		bgcolor[2] = 120
 		fgcolor[0] = 107
